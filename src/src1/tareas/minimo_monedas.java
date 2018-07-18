@@ -1,4 +1,4 @@
-Implementa un programa que muestre el numero minimo de monedas necesarias para darle el cambio a un usuario.
+/*Implementa un programa que muestre el numero minimo de monedas necesarias para darle el cambio a un usuario.
 
 $ ./minimo_monedas
 Hola!  Cuanto cambio te debo?O hai!
@@ -37,6 +37,37 @@ $1.23
 10. repetir el paso 4 con la moneda de 1c
 11. repetir el paso 5 con la moneda de 1c
 12  imprimir el numero de monedas en el acumulador.  
+*/
 
 
 
+
+package src1.tareas;
+
+
+import libs.Input;
+
+public class minimo_monedas {
+	//25,10,5,1
+	public static void main(String[] args) {
+
+		int acumulador = 0;
+		int temp = 0;
+		int [] denominacion = {25,10,5,1};
+		System.out.print("Hola, cuanto cambio necesitas?");
+		float cambio = Input.get_float();
+		cambio = cambio*100;
+		
+		for(int i = 0; i < denominacion.length;i++) {
+			
+			temp = (int) (cambio/denominacion[i]);
+			cambio = (int) (cambio%denominacion[i]);
+			acumulador += temp;
+			
+		}
+		
+		System.out.println("Monedas: " + acumulador);
+		
+	}
+
+}

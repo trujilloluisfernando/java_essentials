@@ -6,7 +6,7 @@ public class Buggy1 {
 
 	public static void main(String[] args) {
 	    int i = get_negative_int();
-	    Input.print(i + " is a negative integer\n");
+	    System.out.print(i + " is a negative integer\n");
 	}
 
 	public static int get_negative_int()
